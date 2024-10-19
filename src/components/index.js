@@ -62,16 +62,16 @@ addCloseEventListeners(popupTypeCard);
 addCloseEventListeners(popupTypeImage);
 
 
-function handleFormSubmit(evt) {
+function handleEditFormSubmit(evt) {
     evt.preventDefault();  
     nameInput.value = profileTitle.textContent;
     jobInput.value = profileDescription.textContent;
     closeModal(popupNewCard);
 };
-editProfileForm.addEventListener('submit', handleFormSubmit);
+editProfileForm.addEventListener('submit', handleEditFormSubmit);
 
 
-function handleCardFormSubmit(evt) {
+function handleNewCardFormSubmit(evt) {
     evt.preventDefault();
     addCard(
         createCard(
@@ -86,4 +86,4 @@ function handleCardFormSubmit(evt) {
     closeModal(popupTypeCard);
     newCardForm.reset();
 }
-newCardForm.addEventListener('submit', handleCardFormSubmit);
+newCardForm.addEventListener('submit', handleNewCardFormSubmit);
