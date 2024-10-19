@@ -85,5 +85,5 @@ function handleNewCardFormSubmit(evt) {
     );
     closeModal(popupTypeCard);
     newCardForm.reset();
-}
+};
 newCardForm.addEventListener('submit', handleNewCardFormSubmit);

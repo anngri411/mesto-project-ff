@@ -1,5 +1,6 @@
 const cardTemplate = document.querySelector('#card-template').content;
 
+const createCard = (item, deleteCard, setLike, handleImageZoom) => {
 const createCard = ( item, deleteCard, setLike, handleImageZoom) => {
   const cardElement = cardTemplate.querySelector('.card').cloneNode(true);
   const cardImage = cardElement.querySelector('.card__image');
@@ -9,6 +10,7 @@ const createCard = ( item, deleteCard, setLike, handleImageZoom) => {
   const likeButton = cardElement.querySelector('.card__like-button');
 
   cardImage.setAttribute('src', item.link);
+  cardImage.setAttribute('alt', item.name);
   cardImage.setAttribute('alt', item.name);
   cardTitle.textContent = item.name;
 
