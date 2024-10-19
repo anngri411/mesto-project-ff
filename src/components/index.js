@@ -39,7 +39,6 @@ const renderInitialCards = (initialCards) => {
 };
 renderInitialCards(initialCards);
 
-
 const handleImageZoom = (item) => {
     popupImage.src = item.link;
     popupImage.alt = item.name;
