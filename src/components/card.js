@@ -2,7 +2,7 @@ import { deleteLike, addLike, removeCard } from './api';
 
 const cardTemplate = document.querySelector('#card-template').content;
 
-const createCard = (item, deleteCard, setLike, handleImageZoom) => {
+const createCard = (item, deleteCard, setLike, handleImageZoom, userId) => {
   const cardElement = cardTemplate.querySelector('.card').cloneNode(true);
   const cardImage = cardElement.querySelector('.card__image');
   const cardTitle = cardElement.querySelector('.card__title');
