@@ -3,7 +3,7 @@ import { initialCards } from './cards';
 import { createCard, setLike, deleteCard } from './card';
 import { openModal, closeModal, addCloseEventListeners } from './modal';
 import { enableValidation, clearValidation } from './validation';
-import { addNewCard, editUserProfile, getInitialCards, getUserData, updateAvatar, removeCard } from './api';
+import { addNewCard, editUserProfile, getInitialCards, getUserData, updateAvatar } from './api';
 
 
 // список карточек
@@ -71,10 +71,7 @@ const renderInitialCards = (initialCards) => {
 renderInitialCards(initialCards);
 */
 
-<<<<<<< HEAD
 // функция открытия карточки
-=======
->>>>>>> refs/remotes/origin/main
 const handleImageZoom = (item) => {
     popupImage.src = item.link;
     popupImage.alt = item.name;
@@ -181,7 +178,7 @@ Promise.all([getInitialCards(), getUserData()])
         data[0].forEach((item) => {
             cardsContainer.append(createCard(item, setLike, deleteCard, handleImageZoom, userId))
         })
+    })
     .catch((err) => {
         console.log(err);
-    })
 });

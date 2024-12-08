@@ -6,20 +6,22 @@ function showInputError(
   validationConfig
 ) {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-
+if (errorElement) {
   inputElement.classList.add(validationConfig.inputErrorClass);
   errorElement.classList.add(validationConfig.errorClass);
   errorElement.textContent = errorMessage;
-}
+  }
+};
 
 // скрытие ошибки
 function hideInputError(formElement, inputElement, validationConfig) {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-
+if (errorElement) {
   inputElement.classList.remove(validationConfig.inputErrorClass);
   errorElement.classList.remove(validationConfig.errorClass);
   errorElement.textContent = "";
-}
+  }
+};
 
 
 // проверка валидации
@@ -54,7 +56,7 @@ const setEventListeners = (formElement, validationConfig) => {
 export const enableValidation = (validationConfig) => {
   const formList = Array.from(document.querySelectorAll(validationConfig.formSelector));
   formList.forEach((formElement) => {
-      formElement.addEventListener('sumbit', (evt) => {
+      formElement.addEventListener('submit', (evt) => {
           evt.preventDefault();
       })
       setEventListeners(formElement, validationConfig)
@@ -79,8 +81,8 @@ const toggleButtonState = (inputList, buttonElement, validationConfig) => {
 
 // очистка
 export const clearValidation = (formElement, validationConfig) => {
-  const inputList = Array.from(formElement.querySelectorAll(validationConfig.inputSelector));
   const buttonElement = formElement.querySelector(validationConfig.submitButtonSelector);
+  const inputList = Array.from(formElement.querySelectorAll(validationConfig.inputSelector));
 
   inputList.forEach((inputElement) => {
       hideInputError(formElement, inputElement, validationConfig);
