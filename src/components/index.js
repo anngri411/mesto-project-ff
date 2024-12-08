@@ -71,6 +71,7 @@ const renderInitialCards = (initialCards) => {
 renderInitialCards(initialCards);
 */
 
+
 // функция открытия карточки
 const handleImageZoom = (item) => {
     popupImage.src = item.link;
