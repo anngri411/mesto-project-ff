@@ -71,10 +71,8 @@ const renderInitialCards = (initialCards) => {
 renderInitialCards(initialCards);
 */
 
-<<<<<<< HEAD
+
 // функция открытия карточки
-=======
->>>>>>> refs/remotes/origin/main
 const handleImageZoom = (item) => {
     popupImage.src = item.link;
     popupImage.alt = item.name;
