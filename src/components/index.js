@@ -20,7 +20,7 @@ const addButton = document.querySelector('.profile__add-button');
 
 // аватарка
 const popupTypeAvatar = document.querySelector('.popup_type_avatar');
-const avatarForm = document.forms["change-avatar"];
+const avatarForm = document.forms["avatar"];
 const avatarLink = document.querySelector('.popup__input_type_avatar');
 const avatarButton = popupTypeAvatar.querySelector('.popup__button');
 
@@ -106,6 +106,8 @@ editProfileForm.addEventListener('submit', handleEditFormSubmit);
 editButton.addEventListener('click', () => {
     openModal(popupTypeEdit);
     clearValidation(editProfileForm, validationConfig);
+    nameInput.value = profileTitle.textContent;
+    jobInput.value = profileDescription.textContent;
 });
 
 
@@ -156,7 +158,7 @@ function handleAvatarSubmit(evt) {
         evt.submitter.textContent = 'Сохранить'
     })
 }
-profileImage.addEventListener('submit', handleAvatarSubmit);
+avatarForm.addEventListener('submit', handleAvatarSubmit);
 
 profileImage.addEventListener('click', () => {
     openModal(popupTypeAvatar);
