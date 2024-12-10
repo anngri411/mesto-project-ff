@@ -176,7 +176,7 @@ Promise.all([getInitialCards(), getUserData()])
         userId = data[1]._id
         profileTitle.textContent = data[1].name;
         profileDescription.textContent = data[1].about;
-        profileImage.style = `background-image: url('${data.avatar}')`;
+        profileImage.style = `background-image: url('${data[1].avatar}')`;
 
         data[0].forEach((item) => {
             cardsContainer.append(createCard(item, setLike, deleteCard, handleImageZoom, userId))
